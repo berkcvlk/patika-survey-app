@@ -1,0 +1,32 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 450px;
+}
+
+.title {
+  position: relative;
+  font-size: 18px;
+  font-weight: 900;
+  color: #cacaca;
+  margin: 45px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title::before {
+  content: attr(content);
+  position: absolute;
+  font-size: 70px;
+  font-weight: 900;
+  color: white;
+  top: -30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0.05;
+}
