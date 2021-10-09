@@ -1,6 +1,7 @@
 import { inputs } from "@constants/survey";
 import { useState } from "react";
 
+import { sendMessage } from "src/socketApi";
 import styles from "./styles.module.css";
 
 const Survey = () => {
@@ -8,6 +9,10 @@ const Survey = () => {
 
   const handleChange = (event) => {
     setSelected(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    sendMessage("new-vote", selected);
   };
 
   return (
@@ -26,7 +31,9 @@ const Survey = () => {
           </label>
         ))}
       </div>
-      <button className={styles.button}>Vote Now!</button>
+      <button onClick={handleSubmit} className={styles.button}>
+        Vote Now!
+      </button>
     </div>
   );
 };

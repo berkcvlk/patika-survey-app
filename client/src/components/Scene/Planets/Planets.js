@@ -2,9 +2,9 @@ import { useState, useEffect, Suspense } from "react";
 import { useSpring } from "@react-spring/core";
 
 import Planet from "./Planet/Planet";
-import { initials, positions, votes } from "@constants/planets";
+import { initials, positions } from "@constants/planets";
 
-const Planets = () => {
+const Planets = ({ votes }) => {
   const [posPlanets, setPosPlanets] = useState({
     earth: positions.left,
     jupiter: positions.right,
@@ -38,9 +38,11 @@ const Planets = () => {
     );
   };
 
+  // Whenever vote updates, re-order the planets
   useEffect(() => {
     orderPlanets();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [votes]);
 
   return (
     <Suspense fallback={null}>
