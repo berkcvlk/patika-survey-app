@@ -1,4 +1,4 @@
-import { Header, Scene } from "@components";
+import { Header, Scene, Survey } from "@components";
 import styles from "./App.module.css";
 
 const App = () => {
@@ -6,6 +6,7 @@ const App = () => {
     <div className={styles.app}>
       <Header />
       <Scene />
+      <Survey />
     </div>
   );
 };
