@@ -1,10 +1,48 @@
 .survey {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 32px;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(180deg, rgba(25, 32, 60, 0) 0%, #161d3a 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #161d3a 100%);
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0;
+  color: #a7a7a7;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a7a7a7;
+}
+
+.options label + label {
+  margin-left: 24px;
+}
+
+.button {
+  outline: none;
+  border: none;
+  display: block;
+  cursor: pointer;
+
+  font-family: "Mulish", sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 20px 40px;
+  margin: 32px 0;
+  background-color: #fafafa;
+  color: #161d3a;
+  box-shadow: 0px 0px 32px rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
 }
