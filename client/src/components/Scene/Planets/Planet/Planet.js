@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { animated } from "@react-spring/three";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import {
   useTexture,
   Sphere,
@@ -12,16 +12,12 @@ const Planet = ({ texture, text, textColor, scale, rate, ...rest }) => {
   const textureMap = useTexture(texture);
   const mesh = useRef();
 
-  useThree(({ camera }) => {
-    camera.position.z = 5;
-  });
-
   useFrame(() => {
     mesh.current.rotation.y += 0.005;
   });
 
   return (
-    <animated.mesh>
+    <animated.mesh {...rest}>
       <sphereBufferGeometry attach="geometry" />
       <MeshDistortMaterial
         transparent={true}
