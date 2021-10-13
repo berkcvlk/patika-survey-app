@@ -1,4 +1,4 @@
-# Odev 3
+# Patika - Hepsiburada React Bootcamp - Ödev 3
 
 One question planet survey app enhancing websocket concept in React.
 <br/>
